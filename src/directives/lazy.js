@@ -20,7 +20,7 @@ function checkEl(el, binding) {
     const image = new Image();
     image.src = binding.value;
     image.onload = () => {
-      el.src = image.src;
+      el.style.backgroundImage = `url('${image.src}')`;
     }
   }
 }

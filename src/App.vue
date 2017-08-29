@@ -18,18 +18,23 @@
       </md-button>
     </div>
   </md-whiteframe>
-  <md-layout class="content"></md-layout>
+  <md-layout class="content" v-lazy="back"></md-layout>
 </md-layout>
 </template>
 
 <script>
+import lazy from './directives/lazy'
+import back from './assets/back.jpg'
+
 export default {
   name: 'app',
   data () {
     return {
-      elevation: 0
+      elevation: 0,
+      back
     }
   },
+  directives: { lazy },
   mounted() {
     const self = this;
     document.addEventListener('scroll', () => {
@@ -51,7 +56,8 @@ export default {
     top: 0;
   }
   .content {
-    background: url('./assets/back.jpg') center no-repeat;
+    background: url('./assets/Image00001.jpg') center no-repeat;
+    background-size: cover;
   }
   .logo {
     width: 200px;
